@@ -73,12 +73,13 @@ const Nav = styled.div`
   @media ${deviceMax.mobileL}{
     width:100%;
     .input{
-      
+      display:none;
     }
     .serachbar{
-      
+      display:none;
+    }
   }
-`;
+`
 
 const Leftcontainer= styled.div`
 width: 100%;
