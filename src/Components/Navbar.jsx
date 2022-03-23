@@ -71,7 +71,7 @@ const Nav = styled.div`
    border-bottom: 2px solid red
   }
   @media ${deviceMax.mobileL}{
-    width:100%;
+    
     .input{
       display:none;
     }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "../Components/Styles/Container.styles";
 import Card from './Card'
+import {deviceMax} from '../Utilis/Device'
 import styled from "styled-components";
 const Products = () => {
   return (
@@ -57,11 +58,11 @@ const Products = () => {
             </div>
           </LeftData>
           <CenterData>
+           <Card/>
           <Card/>
           <Card/>
           <Card/>
-          <Card/>
-          <Card/>
+          <Card/> 
 
           </CenterData>
         </Sidebar>
@@ -77,6 +78,9 @@ const Sidebar = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-left:100px;
+  @media ${deviceMax.mobileL}{
+    width:35%;
+  }
 `;
 
 const LeftData = styled.div`
@@ -84,6 +88,9 @@ const LeftData = styled.div`
   height: 100%;
   font-family: "Raleway", sans-serif;
   background: #fff;
+  @media ${deviceMax.mobileL}{
+   display:none;
+}
 `;
 const CenterData=styled.div`
 width:900px;
