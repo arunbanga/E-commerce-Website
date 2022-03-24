@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../Components/Styles/Container.styles";
 import Card from './Card'
-import {deviceMax} from '../Utilis/Device'
+import {deviceMax,device} from '../Utilis/Device'
 import styled from "styled-components";
 const Products = () => {
   return (
@@ -85,6 +85,9 @@ const Sidebar = styled.div`
     height:168px;
     display:flex;
     justify-content:center;
+  }
+  @media${device.tablet} and ${deviceMax.laptopL}{
+    margin-left:30px;
   }
 `;
 

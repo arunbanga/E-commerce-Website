@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "./Styles/Container.styles";
-import {deviceMax} from '../Utilis/Device'
+import {deviceMax,device} from '../Utilis/Device'
 import styled from 'styled-components'
 const Card = () => {
   return (
@@ -67,6 +67,9 @@ const CardContainer=styled.div`
     height:100%;
     padding:5px
   }
+  @media ${device.mobileL} and ${deviceMax.tablet}{
+  padding:5px;
+ }
 
   
 `
@@ -84,6 +87,7 @@ const Image=styled.div`
  @media${deviceMax.mobileL}{
    display:none;
  }
+ 
 `
 
 export default Card;
