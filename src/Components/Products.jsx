@@ -39,15 +39,15 @@ const Products = () => {
             <hr style={{ borderBottom: "2px solid green" }} />
             <div style={{ marginLeft: "20px" }}>
               <h3>
-                <input type="color" style={{ border: "none" }} />S
+                <input type="checkbox"/>S
               </h3>
               <h3>
                
-                <input type="color" style={{ border: "none" }} />M
+                <input type="checkbox"/>M
               </h3>
               <h3>
                
-                <input type="color" style={{ border: "none" }} />L
+                <input type="checkbox"/>L
               </h3>
             </div>
             <h1 style={{ marginLeft: "10px", fontSize: "20px" }}>Price</h1>
@@ -59,10 +59,9 @@ const Products = () => {
           </LeftData>
           <CenterData>
            <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/> 
+           
+
+          
 
           </CenterData>
         </Sidebar>
@@ -79,7 +78,12 @@ const Sidebar = styled.div`
   justify-content: flex-start;
   margin-left:100px;
   @media ${deviceMax.mobileL}{
-    width:35%;
+    width:100%;
+    margin:0px;
+    padding:0px;
+    height:200px;
+    display:flex;
+    justify-content:center;
   }
 `;
 
@@ -93,11 +97,17 @@ const LeftData = styled.div`
 }
 `;
 const CenterData=styled.div`
-width:900px;
-display:flex;
-flex-direction:column;
-height:200px;
-
+width:75%;
+margin:0px;
+ @media ${deviceMax.mobileL}{
+  display:flex;
+  flex-direction:row;
+  
+  
+  
+ }
+ 
+ 
 
 `
 export default Products;

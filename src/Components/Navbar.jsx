@@ -8,7 +8,6 @@ const Navbar = () => {
     <>
       <Container width="100%" background='black'>
         <Container
-          width="100%"
           display="flex"
           flexDrection="row"
           justifyContent="center"
@@ -71,10 +70,11 @@ const Nav = styled.div`
    border-bottom: 2px solid red
   }
   @media ${deviceMax.mobileL}{
-    
+   
     .input{
       display:none;
     }
+    
     .serachbar{
       display:none;
     }
