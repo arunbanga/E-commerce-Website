@@ -59,10 +59,11 @@ const Products = () => {
           </LeftData>
           <CenterData>
            <Card/>
+           <Card/>
+           <Card/>
+           <Card/>
+           <Card/>
            
-
-          
-
           </CenterData>
         </Sidebar>
       </Container>
@@ -81,7 +82,7 @@ const Sidebar = styled.div`
     width:100%;
     margin:0px;
     padding:0px;
-    height:200px;
+    height:168px;
     display:flex;
     justify-content:center;
   }
@@ -98,11 +99,11 @@ const LeftData = styled.div`
 `;
 const CenterData=styled.div`
 width:75%;
-margin:0px;
+margin-left:10px;
  @media ${deviceMax.mobileL}{
   display:flex;
-  flex-direction:row;
-  
+  flex-direction:column;
+  margin:0px;                                           
   
   
  }

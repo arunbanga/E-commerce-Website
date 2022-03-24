@@ -5,13 +5,15 @@ import styled from 'styled-components'
 const Card = () => {
   return (
     <>
-      <Container width="100%" display="flex" flexDirection="row">
+      <Container width="100%" display="flex" flexDirection="row" margin='10px'>
       <CardContainer>
           
 
           
-     
-        <figure>
+     <Image>
+
+    
+        
           <img
             className="images"
             src="https://images-eu.ssl-images-amazon.com/images/I/41PdV1qZQpL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"
@@ -19,10 +21,11 @@ const Card = () => {
               width: "140px",
               height: "120px",
               border: "1px solid gray",
+              borderRadius:'5px',
               margin: "2px"
             }}
           />
-        </figure>
+         </Image>
        
         <ContentContainer>
 
@@ -36,7 +39,7 @@ const Card = () => {
           <span className='span'
             style={{
               display: "flex",
-              paddingTop: "60px",
+              paddingTop: "35px",
               justifyContent: "space-between"
             }}
           >
@@ -55,23 +58,32 @@ const CardContainer=styled.div`
   display:flex;
   flex-direction:row;
   border: 1px solid black;
+  border-radius:5px;
   @media${deviceMax.mobileL}{
     width:100%;
     display:flex;
     justify-content:center;
+    flex-direction:row;
     height:100%;
+    padding:5px
   }
 
   
 `
 const ContentContainer= styled.div`
 @media${deviceMax.mobileL}{
-  font-size:12px;
+  
   display:flex;
   flex-direction:row;
   
 }
 
+`
+const Image=styled.div`
+ margin:10px;
+ @media${deviceMax.mobileL}{
+   display:none;
+ }
 `
 
 export default Card;
