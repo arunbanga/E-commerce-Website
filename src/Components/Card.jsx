@@ -3,7 +3,7 @@ import { Container } from "./Styles/Container.styles";
 import { deviceMax, device } from "../Utilis/Device";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
-import { fontWeight } from "@mui/system";
+
 const Card = () => {
   return (
     <>
@@ -37,7 +37,7 @@ const Card = () => {
                    fontWeight:'bold'
                 }}
               >
-                $350
+                $ 350
                 <Button className='btn'variant="contained" color="success">
                   Buy Now
                 </Button>
