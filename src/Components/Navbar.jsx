@@ -3,10 +3,11 @@ import { Container } from "./Styles/Container.styles";
 import SearchIcon from '@mui/icons-material/Search';
 import {deviceMax} from '../Utilis/Device'
 import styled from "styled-components";
+import shadows from "@mui/material/styles/shadows";
 const Navbar = () => {
   return (
     <>
-      <Container width="100%" background='black'>
+      <Container width="100%" background='black' >
         <Container
           display="flex"
           flexDrection="row"
@@ -29,16 +30,17 @@ const Navbar = () => {
          
        </Leftcontainer>
         
-         <input className='input'type='text' style={{height:'30px',width:'100%',marginTop:'20px',  }}  placeholder='Search for Products,Brand and More' />
+         <input className='input' type='text' style={{height:'30px',width:'50%',marginTop:'20px', borderRadius:'2px' }}  placeholder='Search for Products,Brand and More' />
          <SearchIcon className='serachbar'style={{marginTop:'25px', }}/>
+            <div className='nav'>
             <h3 style={{ padding: "10px"}}>
-              <a style={{ color: "black", textDecoration: "none",}} href="/">
+              <a style={{ textDecoration: "none",}} href="/">
                 Home
               </a>
             </h3>
             <h3 style={{ padding: "10px" }}>
               <a
-                style={{ color: "black", textDecoration: "none" }}
+                style={{ textDecoration: "none" }}
                 href="/products"
               >
                 Products
@@ -46,12 +48,13 @@ const Navbar = () => {
             </h3>
             <h3 style={{ padding: "10px" }}>
               <a
-                style={{ color: "black", textDecoration: "none" }}
+                style={{ textDecoration: "none" }}
                 href="/cart"
               >
                 Cart
               </a>
             </h3>
+            </div>
           </Nav>
         </Container>
       </Container>
@@ -65,9 +68,22 @@ const Nav = styled.div`
   margin: 0px;
   box-shadow:2px 2px 5px 2px gray;
   display: flex;
+  background:#2ca1e6;
+  color:black;
   flex-direction: row;
+  
   h3:active{
    border-bottom: 2px solid red
+  }
+  .nav{
+    display:flex;
+    
+  }
+  .nav a{
+    color:black;
+  }
+  .nav a:hover{
+    color: white;
   }
   @media ${deviceMax.mobileL}{
    
@@ -84,6 +100,7 @@ const Nav = styled.div`
 const Leftcontainer= styled.div`
 width: 100%;
 display:flex;
+font-size:20px;
 justify-content: flex-start;
 
 @media ${deviceMax.mobileL}{

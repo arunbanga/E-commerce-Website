@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Products = () => {
   return (
     <>
-      <Container width="100%">
+      <Container width="100%" display='flex' >
         <Sidebar>
           <LeftData>
             <h1
@@ -18,8 +18,8 @@ const Products = () => {
             >
               Products family
             </h1>
-            <hr style={{ borderBottom: "2px solid green" }} />
-            <div style={{ marginLeft: "20px" }}>
+            <hr style={{ borderBottom: "2px solid lightgray" }} />
+            <div className='sbar'style={{ marginLeft: "20px" ,cursor:'pointer',}}>
               <h3>Shoes</h3>
               <h3>Shirts</h3>
               <h3>Watches</h3>
@@ -37,7 +37,7 @@ const Products = () => {
               Sizes
             </h1>
             <hr style={{ borderBottom: "2px solid green" }} />
-            <div style={{ marginLeft: "20px" }}>
+            <div className='sbar'style={{ marginLeft: "20px",cursor:'pointer'}}>
               <h3>
                 <input type="checkbox"/>S
               </h3>
@@ -53,9 +53,10 @@ const Products = () => {
             <h1 style={{ marginLeft: "10px", fontSize: "20px" }}>Price</h1>
             <hr style={{ borderBottom: "2px solid green" }} />
             <div>
-                <input type='range'/>
+                <input type='range' style={{cursor:'pointer'}}/>
                 <h3>Min:0  Max:0</h3> 
             </div>
+            
           </LeftData>
           <CenterData>
            <Card/>
@@ -63,8 +64,9 @@ const Products = () => {
            <Card/>
            <Card/>
            <Card/>
-           
+
           </CenterData>
+          
         </Sidebar>
       </Container>
     </>
@@ -72,9 +74,9 @@ const Products = () => {
 };
 
 const Sidebar = styled.div`
-  width: 90%;
+  width: 100%;
   position:absolute;;
-  top:90px;
+  top:88px;
   display: flex;
   justify-content: flex-start;
   margin-left:100px;
@@ -82,20 +84,26 @@ const Sidebar = styled.div`
     width:100%;
     margin:0px;
     padding:0px;
-    height:168px;
+    height:1
     display:flex;
     justify-content:center;
   }
-  @media${device.tablet} and ${deviceMax.laptopL}{
-    margin-left:30px;
-  }
+  @media ${device.mobileL} and ${deviceMax.laptopL}{
+    margin-left:10px;
+    width:97%;
+}
+   
 `;
 
 const LeftData = styled.div`
   width: 250px;
+  background:#151f3d;
+  color:white;
   height: 100%;
   font-family: "Raleway", sans-serif;
-  background: #fff;
+  .sbar :hover{
+     color:#ffae00;
+  }
   @media ${deviceMax.mobileL}{
    display:none;
 }
@@ -107,11 +115,13 @@ margin-left:10px;
   display:flex;
   flex-direction:column;
   margin:0px;                                           
-  
+  width:80%;
   
  }
  
  
+ 
 
 `
+
 export default Products;
