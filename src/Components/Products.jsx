@@ -4,7 +4,7 @@ import Card from "./Card";
 import { deviceMax, device } from "../Utilis/Device";
 import styled from "styled-components";
 import {Data} from './Data'
-import{connect} from 'react-redux'
+
 const Products = () => {
   return (
     <>
@@ -131,9 +131,5 @@ const MainContainer = styled.div`
   width: 100%;
   height: 1200px;
 `;
-const mapStateToProps=state=>{
-  return{
-    Card:state.cart.Card
-  }
-}
-export default connect(mapStateToProps)(Products);
+
+export default  Products;

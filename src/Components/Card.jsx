@@ -3,8 +3,11 @@ import { Container } from "./Styles/Container.styles";
 import { deviceMax, device } from "../Utilis/Device";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
-
+import {connect} from 'react-redux';
+import {useDispatch} from 'react-redux'
+import {addtoCart} from '../Redux/Carts/Action'
 const Card = (props) => {
+  const dispatch=useDispatch()
   return (
     <>
       <Container width="100%" display="flex" flexDirection="row">
@@ -21,7 +24,7 @@ const Card = (props) => {
           </Image>
 
           <ContentContainer>
-            <p>{props.title}
+            <p>
               
               <span style={{ display: "block", marginTop: "10px" }}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
@@ -38,8 +41,8 @@ const Card = (props) => {
                 }}
               >
                 $ 350
-                <Button className="btn" variant="contained" color="success">
-                  Buy Now
+                <Button  onClick={()=>(dispatch(addtoCart))} className="btn" variant="contained" color="success">
+                  Buy Now 
                 </Button>
               </span>
             </p>
@@ -102,5 +105,7 @@ const Image = styled.div`
  }
  
 `;
+const mapStateToProps= state=>{
 
-export default Card;
+}
+export default connect(mapStateToProps)(Card);
