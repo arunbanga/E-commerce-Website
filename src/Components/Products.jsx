@@ -3,9 +3,10 @@ import { Container } from "../Components/Styles/Container.styles";
 import Card from "./Card";
 import { deviceMax, device } from "../Utilis/Device";
 import styled from "styled-components";
-import {Data} from './Data'
 
-const Products = () => {
+import { connect } from "react-redux";
+const Products = ({ products }) => {
+  console.log({products})
   return (
     <>
       <Container width="100%" display="flex">
@@ -16,7 +17,7 @@ const Products = () => {
                 style={{
                   marginLeft: "10px",
                   fontSize: "20px",
-                  textAlign: "center"
+                  textAlign: "center",
                 }}
               >
                 Products family
@@ -37,7 +38,7 @@ const Products = () => {
                 style={{
                   marginLeft: "10px",
                   fontSize: "20px",
-                  textAlign: "center"
+                  textAlign: "center",
                 }}
               >
                 Sizes
@@ -65,15 +66,9 @@ const Products = () => {
               </div>
             </LeftData>
             <CenterData>
-            {Data.map((val)=>{
-              return(
-                <Card image={val.image}
-                  title={val.title}
-                />
-              )
-            })}
-             
-             
+              {products.map((val) => {
+                return <Card image={val.image} title={val.title} />;
+              })}
             </CenterData>
           </Sidebar>
         </MainContainer>
@@ -84,24 +79,23 @@ const Products = () => {
 
 const Sidebar = styled.div`
   width: 100%;
-  position:absolute;;
-  top:95px;
+  position: absolute;
+  top: 95px;
   display: flex;
   justify-content: flex-start;
-  margin-left:100px;
-  @media ${deviceMax.mobileL}{
-    width:100%;
-    margin:0px;
-    padding:0px;
-    height:100%;
-    display:flex;
-    justify-content:center;
+  margin-left: 100px;
+  @media ${deviceMax.mobileL} {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
   }
-  @media ${device.mobileL} and ${deviceMax.laptopL}{
-    margin-left:10px;
-    width:97%;
-}
-   
+  @media ${device.mobileL} and ${deviceMax.laptopL} {
+    margin-left: 10px;
+    width: 97%;
+  }
 `;
 
 const LeftData = styled.div`
@@ -131,5 +125,9 @@ const MainContainer = styled.div`
   width: 100%;
   height: 1200px;
 `;
-
-export default  Products;
+const mapStateToProps = (state) => {
+  return {
+    products: state.productsState.products,
+  };
+};
+export default connect(mapStateToProps)(Products);
