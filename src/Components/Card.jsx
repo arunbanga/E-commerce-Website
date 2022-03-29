@@ -4,14 +4,14 @@ import { deviceMax, device } from "../Utilis/Device";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <>
       <Container width="100%" display="flex" flexDirection="row">
         <CardContainer>
           <Image>
             <img
-              src="https://images-eu.ssl-images-amazon.com/images/I/41PdV1qZQpL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"
+              src={props.image}
               className="images"
               style={{
                 width: "125px",
@@ -21,8 +21,8 @@ const Card = () => {
           </Image>
 
           <ContentContainer>
-            <p>
-              Products Name
+            <p>{props.title}
+              
               <span style={{ display: "block", marginTop: "10px" }}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
                 assumenda voluptas rep...
@@ -33,12 +33,12 @@ const Card = () => {
                   display: "flex",
                   paddingTop: "35px",
                   justifyContent: "space-between",
-                   color:'#ebb905',
-                   fontWeight:'bold'
+                  color: "#ebb905",
+                  fontWeight: "bold"
                 }}
               >
                 $ 350
-                <Button className='btn'variant="contained" color="success">
+                <Button className="btn" variant="contained" color="success">
                   Buy Now
                 </Button>
               </span>
