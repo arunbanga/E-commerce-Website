@@ -1,18 +1,17 @@
-
-
-const InitailState={
-    Products:[],
-    Cart:[],
+const initialState={
+     cartItems:[10],
 }
 
-const Reducer=(state=InitailState,action )=>{
+const reducer=(state=initialState,action )=>{
     switch(action.type){
     case action.ADD_TO_CART:
+        const _products=[...state.cartItems]
+        _products.push(action.payload)
             return{
-                ...state.card.findIndex()
+                cartItems:_products
             };
     default:
         return state;
     }
 }
-export default Reducer;
+export default reducer;

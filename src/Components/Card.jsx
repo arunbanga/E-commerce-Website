@@ -25,7 +25,7 @@ const Card = (props) => {
 
           <ContentContainer>
             <p>
-              
+              {props.title}
               <span style={{ display: "block", marginTop: "10px" }}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
                 assumenda voluptas rep...
@@ -41,7 +41,7 @@ const Card = (props) => {
                 }}
               >
                 $ 350
-                <Button  onClick={()=>(dispatch(addtoCart))} className="btn" variant="contained" color="success">
+                <Button  onClick={()=>(dispatch(addtoCart(props.title)))} className="btn" variant="contained" color="success">
                   Buy Now 
                 </Button>
               </span>
@@ -105,7 +105,14 @@ const Image = styled.div`
  }
  
 `;
-const mapStateToProps= state=>{
-
+const mapStateToProps= state =>{
+  return{
+    cartItems:state.cartItems
+  }
 }
-export default connect(mapStateToProps)(Card);
+const mapDispatchToProps=dispatch=>{
+return{
+  addtocart:()=>dispatch(addtoCart())
+}
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Card);
