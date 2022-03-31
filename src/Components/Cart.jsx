@@ -3,15 +3,22 @@ import {Container}  from './Styles/Container.styles'
 import {connect} from 'react-redux'
 import styled from 'styled-components'
 import {addtoCart} from '../Redux/Carts/Action'
-import {useSelector} from 'react-redux'
+
+import {Cartitems} from './Cartitems'
 const Cart =(props)=>{
-  const cartItems=useSelector((state)=>state.cartItems)
+
     return(
         <>
        <Container width='100%' display='flex'>
          <MainContainer>
-           <h2>Cart items   </h2>
-          
+           <h2>Cart items </h2>
+
+           {Cartitems.map((val)=>{
+             return (
+               <p>{val.id}</p>
+               
+             )
+           })}
            
          </MainContainer>
        </Container>
