@@ -3,7 +3,7 @@ import { Container } from "./Styles/Container.styles";
 import SearchIcon from "@mui/icons-material/Search";
 import { deviceMax } from "../Utilis/Device";
 import styled from "styled-components";
-
+import {NavLink} from 'react-router-dom'
 const Navbar = () => {
   return (
     <>
@@ -45,22 +45,10 @@ const Navbar = () => {
               className="serachbar"
               style={{ marginRight: "20px", marginTop: "25px" }}
             />
-            <div className="nav">
-              <h3 style={{ padding: "10px" }}>
-                <a style={{ textDecoration: "none" }} href="/">
-                  Home
-                </a>
-              </h3>
-              <h3 style={{ padding: "10px" }}>
-                <a style={{ textDecoration: "none" }} href="/products">
-                  Products
-                </a>
-              </h3>
-              <h3 style={{ padding: "10px" }}>
-                <a style={{ textDecoration: "none" }} href="/cart">
-                  Cart
-                </a>
-              </h3>
+            <div className="nav" >
+            <NavLink  style={{padding:'10px',marginTop:'20px', textDecoration:'none'}} to='/'> Home</NavLink>
+            <NavLink  style={{padding:'10px', marginTop:'20px',textDecoration:'none'}} to='/products'> Products</NavLink>
+            <NavLink  style={{padding:'10px', marginTop:'20px', textDecoration:'none'}} to='/cart'> Cart</NavLink>  
             </div>
           </Nav>
         </Container>
