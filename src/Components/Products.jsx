@@ -3,7 +3,6 @@ import { Container } from "../Components/Styles/Container.styles";
 import Card from "./Card";
 import { deviceMax, device } from "../Utilis/Device";
 import styled from "styled-components";
-
 import { connect } from "react-redux";
 const Products = ({ products }) => {
   console.log({products})
@@ -68,7 +67,9 @@ const Products = ({ products }) => {
             <CenterData>
               {products.map((val) => {
                 return <Card key={val.id} image={val.image} title={val.title} />;
+                <button>ii</button>
               })}
+              
             </CenterData>
           </Sidebar>
         </MainContainer>

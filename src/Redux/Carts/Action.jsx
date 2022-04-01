@@ -8,3 +8,9 @@ export const addtoCart=(title)=>{
          }
     }
 }
+    export const removetoCart=()=>{
+        return{
+            type:action.REMOVE_TO_CART,
+             
+        }
+    }

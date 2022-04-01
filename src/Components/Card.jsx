@@ -4,7 +4,7 @@ import { deviceMax, device } from "../Utilis/Device";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
 import {connect} from 'react-redux';
-import {useDispatch} from 'react-redux'
+import {useDispatch,} from 'react-redux'
 import {addtoCart} from '../Redux/Carts/Action'
 const Card = (props) => {
   const dispatch=useDispatch()
