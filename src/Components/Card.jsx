@@ -5,9 +5,19 @@ import Button from "@mui/material/Button";
 import styled from "styled-components";
 import {connect} from 'react-redux';
 import {useDispatch,} from 'react-redux'
+import {useState} from 'react'
 import {addtoCart} from '../Redux/Carts/Action'
 const Card = (props) => {
+  const [cartBtn,setCartBtn] =useState('Buy NOw')
   const dispatch=useDispatch()
+  const handleCart=()=>{
+    if(cartBtn==='Buy Now'){
+      setCartBtn('Add to cart')
+      dispatch(addtoCart(props.title))
+    }else{
+      setCartBtn('Buy Now')
+    }
+  }
   return (
     <>
       <Container width="100%" display="flex" flexDirection="row">
@@ -41,8 +51,8 @@ const Card = (props) => {
                 }}
               >
                 $ 350
-                <Button  onClick={()=>(dispatch(addtoCart(props.title)))} className="btn" variant="contained" color="success">
-                  Buy Now 
+                <Button onClick={()=>handleCart()} className="btn" variant="contained" color="success">
+                {cartBtn}
                 </Button>
               </span>
             </p>

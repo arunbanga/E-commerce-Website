@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { deviceMax } from "../Utilis/Device";
 import styled from "styled-components";
 import {NavLink} from 'react-router-dom'
+import Button from '../Components/Button'
 const Navbar = () => {
   return (
     <>
@@ -48,7 +49,7 @@ const Navbar = () => {
             <div className="nav" >
             <NavLink  style={{padding:'10px',marginTop:'20px', textDecoration:'none'}} to='/'> Home</NavLink>
             <NavLink  style={{padding:'10px', marginTop:'20px',textDecoration:'none'}} to='/products'> Products</NavLink>
-            <NavLink  style={{padding:'10px', marginTop:'20px', textDecoration:'none'}} to='/cart'> Cart</NavLink>  
+            <Button/> 
             </div>
           </Nav>
         </Container>
