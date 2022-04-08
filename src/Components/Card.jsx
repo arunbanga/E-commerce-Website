@@ -9,7 +9,7 @@ import { addtoCart } from "../Redux/Carts/Action";
 const Card = props => {
   const dispatch = useDispatch();
   const handleCart = () => {
-    dispatch(addtoCart(props.title));
+    dispatch(addtoCart(props.title+props.image+props.price));
   };
   return (
     <>
@@ -30,6 +30,7 @@ const Card = props => {
             <p>
               {props.title}
               <span style={{ display: "block", marginTop: "10px" }}>
+
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
                 assumenda voluptas rep...
               </span>
@@ -43,7 +44,7 @@ const Card = props => {
                   fontWeight: "bold"
                 }}
               >
-                $ 350
+                {props.price}
                 <Button
                   onClick={() => handleCart()}
                   className="btn"

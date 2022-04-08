@@ -67,7 +67,7 @@ const Products = ({ products }) => {
             </LeftData>
             <CenterData>
               {products.map((val) => {
-                return <Card key={val.id} image={val.image} title={val.title} 
+                return <Card key={val.id} image={val.image} title={val.title} price={val.price} 
                   
                 />;
               })}
