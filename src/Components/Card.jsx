@@ -3,21 +3,14 @@ import { Container } from "./Styles/Container.styles";
 import { deviceMax, device } from "../Utilis/Device";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
-import {connect} from 'react-redux';
-import {useDispatch,} from 'react-redux'
-import {useState} from 'react'
-import {addtoCart} from '../Redux/Carts/Action'
-const Card = (props) => {
-  const [cartBtn,setCartBtn] =useState('Buy NOw')
-  const dispatch=useDispatch()
-  const handleCart=()=>{
-    if(cartBtn==='Buy Now'){
-      setCartBtn('Add to cart')
-      dispatch(addtoCart(props.title))
-    }else{
-      setCartBtn('Buy Now')
-    }
-  }
+import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addtoCart } from "../Redux/Carts/Action";
+const Card = props => {
+  const dispatch = useDispatch();
+  const handleCart = () => {
+    dispatch(addtoCart(props.title));
+  };
   return (
     <>
       <Container width="100%" display="flex" flexDirection="row">
@@ -51,8 +44,13 @@ const Card = (props) => {
                 }}
               >
                 $ 350
-                <Button onClick={()=>handleCart()} className="btn" variant="contained" color="success">
-                {cartBtn}
+                <Button
+                  onClick={() => handleCart()}
+                  className="btn"
+                  variant="contained"
+                  color="success"
+                >
+                  Buy Now
                 </Button>
               </span>
             </p>
@@ -115,14 +113,14 @@ const Image = styled.div`
  }
  
 `;
-const mapStateToProps= state =>{
-  return{
-    cartItems:state.cartItems
-  }
-}
-const mapDispatchToProps=dispatch=>{
-return{
-  addtocart:()=>dispatch(addtoCart())
-}
-}
-export default connect(mapStateToProps,mapDispatchToProps)(Card);
+const mapStateToProps = state => {
+  return {
+    cartItems: state.cartItems
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addtocart: () => dispatch(addtoCart())
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
