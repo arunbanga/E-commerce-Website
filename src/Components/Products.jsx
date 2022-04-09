@@ -4,7 +4,7 @@ import Card from "./Card";
 import { deviceMax, device } from "../Utilis/Device";
 import styled from "styled-components";
 import { connect } from "react-redux";
-// import Footer from '../Components/Footer'
+ import Footer from '../Components/Footer'
 const Products = ({ products }) => {
   console.log({products})
   return (
@@ -71,7 +71,7 @@ const Products = ({ products }) => {
                   
                 />;
               })}
-              {/* <Footer/> */}
+              <Footer/>
             </CenterData>
             
           </Sidebar>
