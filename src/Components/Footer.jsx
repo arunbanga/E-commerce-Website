@@ -20,8 +20,7 @@ const Footer=()=>{
                   <p>My Account</p>
                   <p>Careers</p>
                   <p>Help and FAQs</p>
-                  <br/>
-                  <h3>Follow us on <br/><TwitterIcon style={{color:'#09d8eb'}}/><YouTubeIcon style={{color:'#ff0019'}}/><FacebookIcon style={{color:'#1186fa'}}/><InstagramIcon style={{color:'#e6005c'}}/></h3>
+
                  </CenterContainer>
                  <RightContiner>
                      <h2>CONTACT INFO</h2>
@@ -34,7 +33,15 @@ const Footer=()=>{
                      <h3>Working day/hours</h3>
                      <p>Mon-Friday/10:00AM - 05:00PM</p>
                  </RightContiner>
-                
+                  <IconsContainer>
+                      <h3>Follow us on</h3>
+                      <div>
+                      <TwitterIcon style={{color:'#09d8eb'}}/>
+                      <YouTubeIcon style={{color:'#ff0019'}}/>
+                      <FacebookIcon style={{color:'#1186fa'}}/>
+                      <InstagramIcon style={{color:'#1186fa'}}/>
+                      </div>
+                  </IconsContainer>
             </MainContainer>
         </Container>
         
@@ -61,22 +68,31 @@ padding:0px;
 }
 `
 const LeftContainer=styled.div`
-width:30%;
+width:20%;
 @media ${deviceMax.mobileL}{
   font-size:20px;
+  width:70%;
 }
 `
 const CenterContainer=styled.div`
- width:35%;
+ width:30%;
  @media ${deviceMax.mobileL}{
   font-size:20px;
+  width:70%;
  }
 `
 const RightContiner=styled.div`
 width:30%;
 @media ${deviceMax.mobileL}{
 font-size:20px;
+width:70%;
 }
 `
-
+const IconsContainer=styled.div`
+ font-family: 'Montserrat', sans-serif;
+ @media ${deviceMax.mobileL} {
+     position:absolute;
+     bottom:100px;
+ }
+`
 export default Footer;
