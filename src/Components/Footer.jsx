@@ -39,7 +39,7 @@ const Footer=()=>{
                       <TwitterIcon style={{color:'#09d8eb'}}/>
                       <YouTubeIcon style={{color:'#ff0019'}}/>
                       <FacebookIcon style={{color:'#1186fa'}}/>
-                      <InstagramIcon style={{color:'#1186fa'}}/>
+                      <InstagramIcon style={{color:'#ff0550'}}/>
                       </div>
                   </IconsContainer>
             </MainContainer>

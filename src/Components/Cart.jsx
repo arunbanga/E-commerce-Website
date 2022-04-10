@@ -10,13 +10,13 @@ const Cart =()=>{
     return(
         <>
         <Container width='100%'>
-        <h2>Cart items </h2>
+        <h2>Products Name </h2>
           <MainContainer>
           <ul>
          {items.map((val)=>{
            return <li key={val.id} style={{color:'black',display:'flex',alignItems:'center',marginLeft:'10px' }}>
              <h4>{val.title}</h4>
-             <img src={val.image} style={{width:'100px',height:'100px'}}/>
+             <img src={val.image} style={{width:'100px',height:'100px',margin:'10px'}}/>
              <p>{val.price}</p>
            </li>
          })}
