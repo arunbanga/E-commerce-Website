@@ -10,8 +10,11 @@ const Cart =()=>{
     return(
         <>
         <Container width='100%'>
-        <h2>Products Name </h2>
+        <h2 style={{textAlign:'center',color:'#1e8bd4'}}>Cart Page </h2>
           <MainContainer>
+          <RightContainer>
+
+         
           <ul>
          {items.map((val)=>{
            return <li key={val.id} style={{color:'black',display:'flex',alignItems:'center',marginLeft:'10px' }}>
@@ -20,9 +23,15 @@ const Cart =()=>{
              <p>{val.price}</p>
            </li>
          })}
+        
          </ul>
+         </RightContainer>
+         <LeftContainer>
+           <h2>Count{items.length}</h2>
+         </LeftContainer>
           {/* <button onClick={()=>(dispatch(removetoCart()))}>Remove</button> */}
           </MainContainer>
+         
          </Container>
         </>
     )
@@ -33,11 +42,19 @@ const Cart =()=>{
 
 
 const MainContainer=styled.div`
+ width:100%;
+  
+`
+const RightContainer=styled.div`
  display:flex;
  justify-content:flex-start;
  flex-direction:row;
   
 `
-
+const LeftContainer=styled.div`
+  position:absolute;
+  top:100px;
+  right:100px;
+`
 
 export default  Cart;
