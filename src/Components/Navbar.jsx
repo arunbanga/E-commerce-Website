@@ -36,7 +36,7 @@ const Navbar = () => {
                 width: "50%",
                 marginTop: "20px",
                 border: "1px solid #ff7200",
-                color: "white",
+                color: "black",
                 borderBottom: "none",
                 borderRadius: "5px"
               }}

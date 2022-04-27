@@ -69,8 +69,10 @@ padding:0px;
 `
 const LeftContainer=styled.div`
 width:20%;
+margin-left:10px;
 @media ${deviceMax.mobileL}{
   font-size:20px;
+  margin:0px;
   width:70%;
 }
 `

@@ -1,9 +1,8 @@
-import React from "react";
+import React   from "react";
 import { Container } from "./Styles/Container.styles";
 import { deviceMax, device } from "../Utilis/Device";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
-import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addtoCart } from "../Redux/Carts/Action";
 const Card = props => {
@@ -51,6 +50,7 @@ const Card = props => {
                   variant="contained"
                   color="success"
                 >
+                 
                   Buy Now
                 </Button>
               </span>
@@ -114,14 +114,5 @@ const Image = styled.div`
  }
  
 `;
-const mapStateToProps = state => {
-  return {
-    cartItems: state.cartItems
-  };
-};
-const mapDispatchToProps = dispatch => {
-  return {
-    addtocart: () => dispatch(addtoCart())
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+
+export default Card;

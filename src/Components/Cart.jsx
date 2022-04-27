@@ -21,13 +21,17 @@ const Cart =()=>{
              <h4>{val.title}</h4>
              <img src={val.image} style={{width:'100px',height:'100px',margin:'10px'}}/>
              <p>{val.price}</p>
+             <div style={{marginLeft:'10px'}}>
+             <label htmlFor='qty'>Qty</label>
+             <input type='number'  style={{width:'50px',marginLeft:'10px'}}/>
+             </div>
            </li>
          })}
         
          </ul>
          </RightContainer>
          <LeftContainer>
-           <h2>Count{items.length}</h2>
+           
          </LeftContainer>
           {/* <button onClick={()=>(dispatch(removetoCart()))}>Remove</button> */}
           </MainContainer>
@@ -49,6 +53,7 @@ const RightContainer=styled.div`
  display:flex;
  justify-content:flex-start;
  flex-direction:row;
+
   
 `
 const LeftContainer=styled.div`

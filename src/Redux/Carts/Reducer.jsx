@@ -18,6 +18,11 @@ const reducer =(state=initialState,action )=>{
         return{ 
             ...state,
         }
+    case actionTypes.ADJUST_QTY:
+        return{
+            ...state,
+            cartItems: state.cartItems.map(items    =>items===action.payload)
+        }    
     default:
         return state;
     }

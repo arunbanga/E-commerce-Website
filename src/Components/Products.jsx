@@ -104,9 +104,11 @@ const Sidebar = styled.div`
 
 const LeftData = styled.div`
   width: 250px;
+  border: 1px solid lightgray;
+  border-radius:5px;
   background: #5c585b;
   color: white;
-  height: 100%;
+  ${'' /* height: 100%; */}
   font-family: "Raleway", sans-serif;
   .sbar :hover {
     color: #ffae00;

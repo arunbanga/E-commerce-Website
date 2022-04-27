@@ -14,3 +14,12 @@ export const addtoCart=(id,title,image,price)=>{
              
         }
     }
+export const adjustQty =(id,title,image,price,value)=>{
+    return{
+        type:action.ADJUST_QTY,
+        payload:{
+            id,title,image,price,
+            qty:value
+        }
+    }
+}
