@@ -1,10 +1,18 @@
 import React from 'react'
 import {Container}  from './Styles/Container.styles'
 import styled from 'styled-components'
-import {useSelector} from 'react-redux'
+import Button from "@mui/material/Button";
+import {useDispatch,useSelector} from 'react-redux'
+import{removetoCart} from '../Redux/Carts/Action'
 const Cart =()=>{
  const items=useSelector((state)=>state.cart.cartItems)
  console.log(items)
+ const dispatch=useDispatch()
+
+ const remove=(id)=>{
+   dispatch(removetoCart(id))
+   console.log(remove)
+ }
     return(
         <>
         <Container width='100%'>
@@ -21,6 +29,7 @@ const Cart =()=>{
              <p>{val.price}</p>
              <div style={{marginLeft:'10px'}}>
              <label htmlFor='qty'> Qty: {val.qty}</label>
+             <Button onClick={()=>remove(val.id)} style={{marginLeft:'10px'}} variant="contained"> Delete</Button>
             </div>
            </li>
            

@@ -17,8 +17,10 @@ const reducer =(state=initialState,action )=>{
             }
         }
 case actionTypes.REMOVE_TO_CART:
+    const data = state.cartItems.filter((val)=>val.id!==action.payload);
        return{ 
             ...state,
+            cartItems:data
         }
     
     default:

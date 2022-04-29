@@ -8,10 +8,10 @@ export const addtoCart=(id,title,image,price,qty)=>{
          }
     }
 }
-    export const removetoCart=()=>{
+    export const removetoCart=(id)=>{
         return{
             type:action.REMOVE_TO_CART,
-             
+            payload:id
         }
     }
 
