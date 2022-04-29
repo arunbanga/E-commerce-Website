@@ -8,7 +8,7 @@ import { addtoCart } from "../Redux/Carts/Action";
 const Card = props => {
   const dispatch = useDispatch();
   const handleCart = () => {
-    dispatch(addtoCart(props.id,props.title,props.image,props.price));
+    dispatch(addtoCart(props.id,props.title,props.image,props.price,props.qty));
   };
   return (
     <>

@@ -1,10 +1,8 @@
 import React from 'react'
 import {Container}  from './Styles/Container.styles'
 import styled from 'styled-components'
-import {useDispatch,useSelector} from 'react-redux'
-import {removetoCart} from '../Redux/Carts/Action'
+import {useSelector} from 'react-redux'
 const Cart =()=>{
- const dispatch=useDispatch()
  const items=useSelector((state)=>state.cart.cartItems)
  console.log(items)
     return(
@@ -19,14 +17,15 @@ const Cart =()=>{
          {items.map((val)=>{
            return <li key={val.id} style={{color:'black',display:'flex',alignItems:'center',marginLeft:'10px' }}>
              <h4>{val.title}</h4>
-             <img src={val.image} style={{width:'100px',height:'100px',margin:'10px'}}/>
+             <img src={val.image} style={{width:'100px',height:'100px',margin:'10px'}} alt={val.title}/>
              <p>{val.price}</p>
              <div style={{marginLeft:'10px'}}>
-             <label htmlFor='qty'>Qty</label>
-             <input type='number'  style={{width:'50px',marginLeft:'10px'}}/>
-             </div>
+             <label htmlFor='qty'> Qty: {val.qty}</label>
+            </div>
            </li>
+           
          })}
+        
         
          </ul>
          </RightContainer>
