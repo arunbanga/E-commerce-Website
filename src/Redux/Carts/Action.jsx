@@ -14,5 +14,16 @@ export const addtoCart=(id,title,image,price,qty)=>{
             payload:id
         }
     }
-
+   export const Decrement=(item)=>{
+       return{
+           type:action.DECREMENT,
+           payload:item
+       }
+   } 
+   export const increment=(id)=>{
+    return{
+        type:action.INCREMENT,
+        payload:id
+    }
+} 
 

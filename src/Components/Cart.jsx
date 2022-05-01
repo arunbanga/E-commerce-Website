@@ -3,7 +3,7 @@ import {Container}  from './Styles/Container.styles'
 import styled from 'styled-components'
 import Button from "@mui/material/Button";
 import {useDispatch,useSelector} from 'react-redux'
-import{removetoCart} from '../Redux/Carts/Action'
+import{removetoCart,Decrement,increment} from '../Redux/Carts/Action'
 const Cart =()=>{
  const items=useSelector((state)=>state.cart.cartItems)
  console.log(items)
@@ -13,6 +13,13 @@ const Cart =()=>{
    dispatch(removetoCart(id))
    console.log(remove)
  }
+ const decre=(item)=>{
+   (dispatch(Decrement(item)))
+ }
+ const inc=(id)=>{
+   (dispatch(increment(id)))
+ }
+ 
     return(
         <>
         <Container width='100%'>
@@ -27,9 +34,13 @@ const Cart =()=>{
              <h4>{val.title}</h4>
              <img src={val.image} style={{width:'100px',height:'100px',margin:'10px'}} alt={val.title}/>
              <p>{val.price}</p>
-             <div style={{marginLeft:'10px'}}>
-             <label htmlFor='qty'> Qty: {val.qty}</label>
-             <Button onClick={()=>remove(val.id)} style={{marginLeft:'10px'}} variant="contained"> Delete</Button>
+             <div style={{marginLeft:'10px',display:'flex'}}>
+             <div>
+               <span style={{fontSize:'24px',paddingRight:'5px',cursor:'pointer'}} onClick={()=>decre(val)}>-</span>
+               <span style={{fontSize:'20px'}}>{val.qty}</span>
+               <span style={{fontSize:'24px',paddingLeft:'5px',cursor:'pointer'}} onClick={()=>inc(val.id)}>+</span>
+               </div>
+             <Button onClick={()=>remove(val.id)} style={{marginLeft:'20px'}} variant="contained"> Delete</Button>
             </div>
            </li>
            
