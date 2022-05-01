@@ -16,12 +16,19 @@ const reducer =(state=initialState,action )=>{
                 cartItems:[...state.cartItems,temp]
             }
         }
-case actionTypes.REMOVE_TO_CART:
-    const data = state.cartItems.filter((val)=>val.id!==action.payload);
-       return{ 
-            ...state,
-            cartItems:data
-        }
+     return state
+     
+  case actionTypes.REMOVE_TO_CART:
+     const data=[...state.cartItems]
+     const dataIndex=data.findIndex(val=>val.id===action.payload)
+     if(dataIndex!==-1){
+         data.splice(dataIndex,1)
+         return {
+             ...state,
+             cartItems:data
+         }
+     }
+    return state
     
     default:
         return state;
