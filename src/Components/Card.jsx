@@ -1,4 +1,4 @@
-import React   from "react";
+import React from "react";
 import { Container } from "./Styles/Container.styles";
 import { deviceMax, device } from "../Utilis/Device";
 import Button from "@mui/material/Button";
@@ -8,7 +8,9 @@ import { addtoCart } from "../Redux/Carts/Action";
 const Card = props => {
   const dispatch = useDispatch();
   const handleCart = () => {
-    dispatch(addtoCart(props.id,props.title,props.image,props.price,props.qty));
+    dispatch(
+      addtoCart(props.id, props.title, props.image, props.price, props.qty)
+    );
   };
   return (
     <>
@@ -22,6 +24,7 @@ const Card = props => {
                 width: "125px",
                 height: "120px"
               }}
+              alt={props.title}
             />
           </Image>
 
@@ -29,7 +32,6 @@ const Card = props => {
             <p>
               {props.title}
               <span style={{ display: "block", marginTop: "10px" }}>
-
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
                 assumenda voluptas rep...
               </span>
@@ -50,7 +52,6 @@ const Card = props => {
                   variant="contained"
                   color="success"
                 >
-                 
                   Buy Now
                 </Button>
               </span>
