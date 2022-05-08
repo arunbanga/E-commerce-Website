@@ -20,14 +20,14 @@ const Cart = () => {
     dispatch(increment(id));
   };
 
-  // let total=''
-  // const itemlist=(val)=>{
-  //   total=total+val.price
-  // }
+   let total=0;
+   const itemlist=(val)=>{
+     total=total+val.price
+  }
 
   return (
     <>
-      <Container width="100%" background='#f5f5f2' height='100%'>
+      <Container width="100%" background='#d9dbd9' height='100%'>
         <MainContainer>
            <RightContainer>
           <p style={{ textAlign: "left", color: "#1e8bd4",paddingLeft:'5px' }}>My Cart ({items.length})</p>
@@ -44,18 +44,18 @@ const Cart = () => {
                       marginLeft: "10px"
                     }}
                   >
-                    <h4>{val.title}</h4>
                     <img
                       src={val.image}
                       style={{
-                        width: "90px",
+                        width: "100px",
                         height: "100px",
                         margin: "10px"
                       }}
                       alt={val.title}
                     />
-                    <p>{val.price}</p>
-                    <div style={{ marginLeft: "10px", display: "flex" }}>
+                    <h4 className='title'>{val.title}</h4>
+                    <p className="price">{val.price}</p>
+                    <div style={{ marginLeft: "20px", display: "flex" }}>
                       <div>
                         <span
                           style={{
@@ -94,12 +94,12 @@ const Cart = () => {
             </ul>
             
           </RightContainer>
-          {/* <LeftContainer>
-          <h4 style={{textAlign:'center',fontFamily:'Open Sans',}}>Price Details</h4>
+           <LeftContainer>
+          <h4 style={{textAlign:'left',fontFamily:'Open Sans',fontSize:'20px',letterSpacing:'2px',height:'10px',color:'green'}}>Price Details</h4><hr/>
           {items.map(itemlist)}
               <p>Total items:{total}</p>
-            </LeftContainer> */}
-          {/* <button onClick={()=>(dispatch(removetoCart()))}>Remove</button> */}
+            </LeftContainer> 
+           
         </MainContainer>
       </Container>
     </>
@@ -107,7 +107,7 @@ const Cart = () => {
 };
 
 const MainContainer = styled.div`
-  width: 70%;
+  width: 100%;
   height:100vh;
   display:flex;
   justify-content:center;
@@ -117,22 +117,32 @@ const RightContainer = styled.div`
   display: block;
   justify-content: flex-start;
   flex-direction: row;
-  width:90%;
+  width:60%;
   height:500px;
   overflow-y: scroll;
   margin-top:20px;
+  margin-left:10px;
   border:2px solid white;
   background:white;
   box-shadow: 1px 1px px 1px gray;
-  
+  ul{
+   .title{
+     padding-left:10px;
+   }
+   .price{
+    padding-left:10px;
+   }
+  }
 `;
-// const LeftContainer = styled.div`
-//   width:30%;
-//   border:2px solid lightgray;
-//   height:500px;
-//   background:white;
-//   margin:10px;
-//   padding-left:5px;
-// `;
+const LeftContainer = styled.div`
+  width:25%;
+  border:2px solid white;
+   box-shadow: 1px 1px px 1px gray;
+   height:500px;
+   background:white;
+   margin:10px;
+   margin-top:20px;
+   padding-left:5px;
+ `;
 
 export default Cart;
