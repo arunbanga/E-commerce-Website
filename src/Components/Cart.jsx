@@ -20,10 +20,17 @@ const Cart = () => {
     dispatch(increment(id));
   };
 
-   let total=0;
-   const itemlist=(val)=>{
-     total=total+val.price
-  }
+  //  let total=0;
+  //  const itemlist=(val)=>{
+  //    total=total+val.price
+  // }
+
+  let total=0;
+  items.forEach(function(elm){
+      total=total+elm.price
+      
+  })
+  console.log(total)
 
   return (
     <>
@@ -54,7 +61,7 @@ const Cart = () => {
                       alt={val.title}
                     />
                     <h4 className='title'>{val.title}</h4>
-                    <p className="price">{val.price}</p>
+                    <p className="price">{val.price*val.qty}</p>
                     <div style={{ marginLeft: "20px", display: "flex" }}>
                       <div>
                         <span
@@ -96,8 +103,8 @@ const Cart = () => {
           </RightContainer>
            <LeftContainer>
           <h4 style={{textAlign:'left',fontFamily:'Open Sans',fontSize:'20px',letterSpacing:'2px',height:'10px',color:'green'}}>Price Details</h4><hr/>
-          {items.map(itemlist)}
-              <p>Total items:{total}</p>
+          {/* {items.map(itemlist)} */}
+              <p>Total items:$ {total}</p>
             </LeftContainer> 
            
         </MainContainer>
