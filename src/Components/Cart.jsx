@@ -27,7 +27,7 @@ const Cart = () => {
   const getTotal = () => {
     let total = 0;
     items.forEach(function (elm) {
-      total = total + elm.price;
+      total = total + elm.price*elm.qty;
     });
     console.log(total);
     return total
