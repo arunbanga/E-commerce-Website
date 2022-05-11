@@ -1,22 +1,25 @@
 import React from "react";
 import { Container } from "./Styles/Container.styles";
+
+import {NavLink} from 'react-router-dom'
+import { deviceMax } from "../Utilis/Device";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { removetoCart, Decrement, increment } from "../Redux/Carts/Action";
 const Cart = () => {
-  const items = useSelector((state) => state.cart.cartItems);
+  const items = useSelector(state => state.cart.cartItems);
   console.log(items);
   const dispatch = useDispatch();
 
-  const remove = (id) => {
+  const remove = id => {
     dispatch(removetoCart(id));
     console.log(remove);
   };
-  const decre = (item) => {
+  const decre = item => {
     dispatch(Decrement(item));
   };
-  const inc = (id) => {
+  const inc = id => {
     dispatch(increment(id));
   };
 
@@ -26,11 +29,11 @@ const Cart = () => {
   // }
   const getTotal = () => {
     let total = 0;
-    items.forEach(function (elm) {
-      total = total + elm.price*elm.qty;
+    items.forEach(function(elm) {
+      total = total + elm.price * elm.qty;
     });
     console.log(total);
-    return total
+    return total;
   };
 
   return (
@@ -42,33 +45,17 @@ const Cart = () => {
               style={{
                 textAlign: "left",
                 color: "#1e8bd4",
-                paddingLeft: "5px",
+                paddingLeft: "5px"
               }}
             >
               My Cart ({items.length})
             </p>
             <hr />
             <ul>
-              {items.map((val) => {
+              {items.map(val => {
                 return (
-                  <li
-                    key={val.id}
-                    style={{
-                      color: "black",
-                      display: "flex",
-                      alignItems: "center",
-                      marginLeft: "10px",
-                    }}
-                  >
-                    <img
-                      src={val.image}
-                      style={{
-                        width: "100px",
-                        height: "100px",
-                        margin: "10px",
-                      }}
-                      alt={val.title}
-                    />
+                  <li key={val.id} className="list">
+                    <img src={val.image} className="image" alt={val.title} />
                     <h4 className="title">{val.title}</h4>
                     <p className="price">{val.price * val.qty}</p>
                     <div style={{ marginLeft: "20px", display: "flex" }}>
@@ -77,7 +64,7 @@ const Cart = () => {
                           style={{
                             fontSize: "24px",
                             paddingRight: "5px",
-                            cursor: "pointer",
+                            cursor: "pointer"
                           }}
                           onClick={() => decre(val)}
                         >
@@ -88,7 +75,7 @@ const Cart = () => {
                           style={{
                             fontSize: "24px",
                             paddingLeft: "5px",
-                            cursor: "pointer",
+                            cursor: "pointer"
                           }}
                           onClick={() => inc(val.id)}
                         >
@@ -116,7 +103,7 @@ const Cart = () => {
                 fontSize: "20px",
                 letterSpacing: "2px",
                 height: "10px",
-                color: "green",
+                color: "green"
               }}
             >
               Price Details
@@ -125,7 +112,11 @@ const Cart = () => {
             {/* {items.map(itemlist)} */}
             {/* <p>Total items:$ {total}</p> */}
             <p>Total items:$ {getTotal()}</p>
+            <div>
+            <NavLink to = '/checkout' style={{textDecoration:'none'}}><Button variant='outlined'>Checkout</Button></NavLink>              
+            </div>
           </LeftContainer>
+         
         </MainContainer>
       </Container>
     </>
@@ -137,6 +128,10 @@ const MainContainer = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
+  @media ${deviceMax.mobileL} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const RightContainer = styled.div`
   display: block;
@@ -150,6 +145,18 @@ const RightContainer = styled.div`
   border: 2px solid white;
   background: white;
   box-shadow: 1px 1px px 1px gray;
+  .list {
+    color: black;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    width:100%;
+  }
+  .image {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
   ul {
     .title {
       padding-left: 10px;
@@ -158,6 +165,18 @@ const RightContainer = styled.div`
       padding-left: 10px;
     }
   }
+  @media ${deviceMax.mobileL} {
+    width: 93%;
+    .list{
+      display:flex;
+      flex-direction:column;
+      margin:0px;
+      justify-content:center;
+      align-items:center;
+      padding:0px;
+    }
+  }
+
 `;
 const LeftContainer = styled.div`
   width: 25%;
@@ -168,6 +187,10 @@ const LeftContainer = styled.div`
   margin: 10px;
   margin-top: 20px;
   padding-left: 5px;
+  @media ${deviceMax.mobileL} {
+    width: 92%;
+  }
 `;
+
 
 export default Cart;

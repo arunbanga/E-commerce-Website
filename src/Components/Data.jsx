@@ -16,7 +16,7 @@ export const data=[
     {
         id:3,
         image:'https://img.joomcdn.net/92cd781f91e6ca86f3aa3fa0fdfba89c23857a5c_original.jpeg',
-        title:'Tennis  Shoes ',
+        title:'Tennis Shoes ',
         price: 1350,
         qty:0
     },
@@ -30,7 +30,7 @@ export const data=[
     {
         id:5,
         image:'https://m.media-amazon.com/images/I/81i057rz8gS._UX625_.jpg',
-        title:'Comfortable Shoes ',
+        title:' Stylish Shoes ',
         price:950,
         qty:0
     }
