@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "./Styles/Container.styles";
-
 import {NavLink} from 'react-router-dom'
 import { deviceMax } from "../Utilis/Device";
 import styled from "styled-components";
