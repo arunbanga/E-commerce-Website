@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./Styles/Container.styles";
 import {NavLink} from 'react-router-dom'
-import { deviceMax } from "../Utilis/Device";
+import { deviceMax ,device} from "../Utilis/Device";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
@@ -58,7 +58,7 @@ const Cart = () => {
                     <h4 className="title">{val.title}</h4>
                     <p className="price">{val.price * val.qty}</p>
                     <div style={{ marginLeft: "20px", display: "flex" }}>
-                      <div>
+                      <div className='qty'>
                         <span
                           style={{
                             fontSize: "24px",
@@ -81,6 +81,7 @@ const Cart = () => {
                           +
                         </span>
                       </div>
+                      <div className='btn'>
                       <Button
                         onClick={() => remove(val.id)}
                         style={{ marginLeft: "20px" }}
@@ -88,6 +89,7 @@ const Cart = () => {
                       >
                         Delete
                       </Button>
+                      </div>
                     </div>
                   </li>
                 );
@@ -144,12 +146,20 @@ const RightContainer = styled.div`
   border: 2px solid white;
   background: white;
   box-shadow: 1px 1px px 1px gray;
+  @media ${device.mobileL} and ${deviceMax.tablet}{
+            width:66%;
+ 
+ }
   .list {
     color: black;
     display: flex;
     align-items: center;
-    margin-left: 10px;
-    width:100%;
+    justify-content:space-between;
+    width:70%;
+    @media ${device.mobileL} and ${deviceMax.tablet}{
+            width:97%;
+ 
+     }
   }
   .image {
     width: 100px;
@@ -163,17 +173,25 @@ const RightContainer = styled.div`
     .price {
       padding-left: 10px;
     }
+    .qty{
+      margin-top:4px;
+    }
+    .btn{
+      margin-left:10px;
+    }
   }
   @media ${deviceMax.mobileL} {
     width: 93%;
     .list{
       display:flex;
       flex-direction:column;
-      margin:0px;
+      margin-left:0px;
+      width:82%;
       justify-content:center;
       align-items:center;
-      padding:0px;
+      padding-left:0px;
     }
+    
   }
 
 `;

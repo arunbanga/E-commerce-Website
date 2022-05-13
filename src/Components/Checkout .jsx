@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import {deviceMax} from '../Utilis/Device'
 import styled from "styled-components";
 const Checkout = () => {
   const items = useSelector(state => state.cart.cartItems);
@@ -42,11 +43,21 @@ const MainContainer = styled.div`
 `;
 const CenterContainer = styled.div`
   div {
-    width: 38%;
+    width: 37%;
+    background:lightgray;
+    color:#13729c;
+    height:42px;
+    padding:0px 10px 0px 5px;
     display: flex;
+    margin-top:10px;
+    align-items:center;
     margin-left: 10px;
     justify-content: space-between;
+    @media ${deviceMax.mobileL}{
+      width:92%;
+    }
   }
+  
 `;
 
 const RightContainer = styled.div`
@@ -55,6 +66,9 @@ const RightContainer = styled.div`
     display: block;
     margin-left: 5px;
     justify-content: space-between;
+    @media ${deviceMax.mobileL}{
+      width:96%;
+    }
   }
 
   .list {
@@ -65,11 +79,13 @@ const RightContainer = styled.div`
     width: 50px;
     height: 60px;
   }
+  
+  
 `;
 const Footer = styled.div`
   width: 100%;
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   display: flex;
   margin-left: 10px;
   justify-content: center;
