@@ -5,7 +5,7 @@ const Button = () => {
     const state= useSelector((state)=>state.cart.cartItems)
     return (
         <>
-        <NavLink  style={{padding:'10px', marginTop:'20px', textDecoration:'none'}}  to='/cart'>
+        <NavLink  className='py-5 mx-2'  to='/cart'>
            Cart({state.length}) 
         </NavLink>
         </>

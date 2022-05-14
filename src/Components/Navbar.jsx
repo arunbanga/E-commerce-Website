@@ -18,37 +18,32 @@ const Navbar = () => {
         >
           <Nav>
             <Leftcontainer>
-              <h2
-                style={{
-                  marginLeft: "5px",
-                  color: "#ffae00"
-                }}
-              >
+              <h2 className='text-3xl text-yellow-600 py-3 px-2 font-semibold'>
                 Brand
               </h2>
             </Leftcontainer>
 
             <input
-              className="input"
+              className="input h-7 w-1/2 my-4 border border-black-500 rounded ml-1"
               type="text"
-              style={{
-                height: "30px",
-                width: "50%",
-                marginTop: "20px",
-                border: "1px solid #ff7200",
-                color: "black",
-                borderBottom: "none",
-                borderRadius: "5px"
-              }}
+              // style={{
+              //   height: "30px",
+              //   width: "50%",
+              //   marginTop: "20px",
+              //   border: "1px solid #ff7200",
+              //   color: "black",
+              //   borderBottom: "none",
+              //   borderRadius: "5px"
+              // }}
               placeholder="Search for Products,Brand and More"
             />
             <SearchIcon
-              className="serachbar"
-              style={{ marginRight: "20px", marginTop: "25px" }}
+              className="serachbar mr-5 ml-1 mt-5 "
+              // style={{ marginRight: "20px", marginTop: "25px" }}
             />
             <div className="nav" >
-            <NavLink  style={{padding:'10px',marginTop:'20px', textDecoration:'none'}} to='/'> Home</NavLink>
-            <NavLink  style={{padding:'10px', marginTop:'20px',textDecoration:'none'}} to='/products'> Products</NavLink>
+            <NavLink  className='py-5 mx-2' to='/'> Home</NavLink>
+            <NavLink  className='py-5 mx-2' to='/products'> Products</NavLink>
             <Button/> 
             </div>
           </Nav>
@@ -94,7 +89,7 @@ const Nav = styled.div`
 const Leftcontainer = styled.div`
   width: 100%;
   display: flex;
-  font-size: 20px;
+  font-bold: underline;
   justify-content: flex-start;
 
   @media ${deviceMax.mobileL} {

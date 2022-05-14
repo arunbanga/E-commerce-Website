@@ -103,7 +103,7 @@ const Cart = () => {
                 fontFamily: "Open Sans",
                 fontSize: "20px",
                 letterSpacing: "2px",
-                height: "10px",
+                height: "30px",
                 color: "green"
               }}
             >
