@@ -112,7 +112,7 @@ const Cart = () => {
             <hr />
             {/* {items.map(itemlist)} */}
             {/* <p>Total items:$ {total}</p> */}
-            <p>Total items:$ {getTotal()}</p>
+            <p className='py-2'>Total items:$ {getTotal()}</p>
             <div>
             <NavLink to = '/checkout' style={{textDecoration:'none'}}><Button variant='outlined'>Checkout</Button></NavLink>              
             </div>
@@ -186,7 +186,7 @@ const RightContainer = styled.div`
       display:flex;
       flex-direction:column;
       margin-left:0px;
-      width:82%;
+      width:97%;
       justify-content:center;
       align-items:center;
       padding-left:0px;

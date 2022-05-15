@@ -14,15 +14,17 @@ const Footer=()=>{
                    <h1>Brand Name</h1>
                  </LeftContainer>
                  <CenterContainer>
+                 <div className='info text-xl py-2'>
                   <h2>Customer Service</h2>
                   <p>Order History</p>
                   <p>Order Tracking</p>
                   <p>My Account</p>
                   <p>Careers</p>
                   <p>Help and FAQs</p>
-
+                   </div>   
                  </CenterContainer>
                  <RightContiner>
+                 <div className='info text-xl py-2 '>
                      <h2>CONTACT INFO</h2>
                      <h3>Address</h3>
                      <p>St 123, Mumbai</p>
@@ -32,9 +34,10 @@ const Footer=()=>{
                      <p>mail@domain.com</p>
                      <h3>Working day/hours</h3>
                      <p>Mon-Friday/10:00AM - 05:00PM</p>
+                     </div>
                  </RightContiner>
                   <IconsContainer>
-                      <h3>Follow us on</h3>
+                      <h3 className='text-lg py-1'>Follow us on</h3>
                       <div>
                       <TwitterIcon style={{color:'#09d8eb'}}/>
                       <YouTubeIcon style={{color:'#ff0019'}}/>
@@ -52,7 +55,7 @@ const Footer=()=>{
 
 const MainContainer=styled.div`
 width:100%;
-height:400px;
+height:450px;
 background:#f2f2f2;
 position:absolute;
 left:0px;
@@ -69,18 +72,25 @@ padding:0px;
 `
 const LeftContainer=styled.div`
 width:20%;
-margin-left:10px;
+padding-left:10px;
+font-weight:bold;
+font-size:25px;
 @media ${deviceMax.mobileL}{
-  font-size:20px;
+  font-size:30px;
   margin:0px;
+  padding:0px;
   width:70%;
 }
 `
 const CenterContainer=styled.div`
  width:30%;
+
  @media ${deviceMax.mobileL}{
   font-size:20px;
   width:70%;
+  .info{
+       font-size:15px;
+  }
  }
 `
 const RightContiner=styled.div`
@@ -88,6 +98,9 @@ width:30%;
 @media ${deviceMax.mobileL}{
 font-size:20px;
 width:70%;
+.info{
+       font-size:15px;
+  }
 }
 `
 const IconsContainer=styled.div`

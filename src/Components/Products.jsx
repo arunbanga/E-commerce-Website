@@ -14,18 +14,19 @@ const Products = ({ products }) => {
           <Sidebar>
             <LeftData>
               <h1
-                style={{
-                  marginLeft: "10px",
-                  fontSize: "20px",
-                  textAlign: "center",
-                }}
+                // style={{
+                //   marginLeft: "10px",
+                //   fontSize: "20px",
+                //   textAlign: "center",
+                // }}
+                className='ml-1 text-xl font-bold text-center py-3 '
               >
                 Products family
               </h1>
-              <hr style={{ borderBottom: "2px solid lightgray" }} />
+              <hr style={{ borderBottom: "2px solid lightgray " }} />
               <div
-                className="sbar"
-                style={{ marginLeft: "20px", cursor: "pointer" }}
+                className="sbar p-2 text-xl cursor-pointer"
+                // style={{ marginLeft: "20px", cursor: "pointer" }}
               >
                 <h3>Shoes</h3>
                 <h3>Shirts</h3>
@@ -35,18 +36,19 @@ const Products = ({ products }) => {
                 <h3>Mobiles</h3>
               </div>
               <h1
-                style={{
-                  marginLeft: "10px",
-                  fontSize: "20px",
-                  textAlign: "center",
-                }}
+                // style={{
+                //   marginLeft: "10px",
+                //   fontSize: "20px",
+                //   textAlign: "center",
+                // }}
+                className='ml-3 text-xl font-bold text-start py-2'
               >
                 Sizes
               </h1>
               <hr style={{ borderBottom: "2px solid lightgray" }} />
               <div
-                className="sbar"
-                style={{ marginLeft: "20px", cursor: "pointer" }}
+                className="sbar p-2 text-xl cursor-pointer"
+                // style={{ marginLeft: "20px", cursor: "pointer" }}
               >
                 <h3>
                   <input type="checkbox" />S
@@ -58,9 +60,9 @@ const Products = ({ products }) => {
                   <input type="checkbox" />L
                 </h3>
               </div>
-              <h1 style={{ marginLeft: "10px", fontSize: "20px" }}>Price</h1>
+              <h1/* style={{ marginLeft: "10px", fontSize: "20px" }}*/ className='text-xl font-bold py-2 mx-2'>Price</h1>
               <hr style={{ borderBottom: "2px solid lightgray" }} />
-              <div>
+              <div className='py-2 mx-2'>
                 <input type="range" style={{ cursor: "pointer" }} />
                 <h3>Min:0 Max:0</h3>
               </div>
@@ -84,7 +86,7 @@ const Products = ({ products }) => {
 const Sidebar = styled.div`
   width: 100%;
   position: absolute;
-  top: 95px;
+  top: 70px;
   display: flex;
   justify-content: flex-start;
   margin-left: 100px;
@@ -97,8 +99,8 @@ const Sidebar = styled.div`
     justify-content: center;
   }
   @media ${device.mobileL} and ${deviceMax.laptopL} {
-    margin-left: 10px;
-    width: 97%;
+    margin-left: 0px;
+    width: 100%;
   }
 `;
 

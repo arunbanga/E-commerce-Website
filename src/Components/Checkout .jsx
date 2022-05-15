@@ -54,7 +54,7 @@ const CenterContainer = styled.div`
     margin-left: 10px;
     justify-content: space-between;
     @media ${deviceMax.mobileL}{
-      width:92%;
+      width:95%;
     }
   }
   
@@ -62,12 +62,12 @@ const CenterContainer = styled.div`
 
 const RightContainer = styled.div`
   div {
-    width: 61%;
+    width: 60%;
     display: block;
     margin-left: 5px;
     justify-content: space-between;
     @media ${deviceMax.mobileL}{
-      width:96%;
+      width:95%;
     }
   }
 

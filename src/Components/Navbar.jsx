@@ -24,7 +24,7 @@ const Navbar = () => {
             </Leftcontainer>
 
             <input
-              className="input h-7 w-1/2 my-4 border border-black-500 rounded ml-1"
+              className="input h-7 w-1/2 my-4 border border-black-500 rounded text-sm text-black outline hover:ring-2 ring-gray-300"
               type="text"
               // style={{
               //   height: "30px",
@@ -38,12 +38,12 @@ const Navbar = () => {
               placeholder="Search for Products,Brand and More"
             />
             <SearchIcon
-              className="serachbar mr-5 ml-1 mt-5 "
+              className="serachbar mr-5 ml-1 mt-5 hover:text-yellow-700 active:text-red-400"
               // style={{ marginRight: "20px", marginTop: "25px" }}
             />
             <div className="nav" >
-            <NavLink  className='py-5 mx-2' to='/'> Home</NavLink>
-            <NavLink  className='py-5 mx-2' to='/products'> Products</NavLink>
+            <NavLink  className='py-5 mx-2 ' to='/'> Home</NavLink>
+            <NavLink  className='py-5 mx-2 ' to='/products'> Products</NavLink>
             <Button/> 
             </div>
           </Nav>

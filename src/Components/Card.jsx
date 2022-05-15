@@ -68,6 +68,7 @@ const CardContainer = styled.div`
   background:#5c585b;
   color:#ffffff;
   display:flex;
+  padding:2px;
   margin-bottom:2px;
   flex-direction:row;
   border: 1px solid lightgray;
@@ -82,7 +83,7 @@ const CardContainer = styled.div`
     display:flex;
     justify-content:center;
     flex-direction:row;
-    height:92%;
+    height:99%;
     padding:5px;
     margin:0px;
     .btn{
