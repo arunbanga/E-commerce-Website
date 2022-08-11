@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { addtoCart } from "../Redux/Carts/Action";
-const Card = props => {
+const Card = (props) => {
   const dispatch = useDispatch();
   const handleCart = () => {
     dispatch(
@@ -22,7 +22,7 @@ const Card = props => {
               className="images"
               style={{
                 width: "125px",
-                height: "120px"
+                height: "120px",
               }}
               alt={props.title}
             />
@@ -42,10 +42,10 @@ const Card = props => {
                   paddingTop: "35px",
                   justifyContent: "space-between",
                   color: "#ebb905",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
-                {props.price}
+                $ {props.price}
                 <Button
                   onClick={() => handleCart()}
                   className="btn"
@@ -64,57 +64,49 @@ const Card = props => {
 };
 
 const CardContainer = styled.div`
-  width:100%;
-  background:#5c585b;
-  color:#ffffff;
-  display:flex;
-  padding:2px;
-  margin-bottom:2px;
-  flex-direction:row;
+  width: 100%;
+  background: #5c585b;
+  color: #ffffff;
+  display: flex;
+  padding: 2px;
+  margin-bottom: 2px;
+  flex-direction: row;
   border: 1px solid lightgray;
-  border-radius:5px;
-  
-  Button.btn:hover{
-    background:#e8402a;
-    color:white;
-  }
-  @media${deviceMax.mobileL}{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    flex-direction:row;
-    height:99%;
-    padding:5px;
-    margin:0px;
-    .btn{
-    font-size:9px;
-  }
-  }
-  
-  @media ${device.mobileL} and ${deviceMax.tablet}{
-  padding:5px;
- 
- }
+  border-radius: 5px;
 
-  
+  Button.btn:hover {
+    background: #e8402a;
+    color: white;
+  }
+  @media${deviceMax.mobileL} {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 99%;
+    padding: 5px;
+    margin: 0px;
+    .btn {
+      font-size: 9px;
+    }
+  }
+
+  @media ${device.mobileL} and ${deviceMax.tablet} {
+    padding: 5px;
+  }
 `;
 const ContentContainer = styled.div`
-@media${deviceMax.mobileL}{
-  font-size:11px;
-   display:flex;
-  flex-direction:row;
- 
-  
-}
-
+  @media${deviceMax.mobileL} {
+    font-size: 11px;
+    display: flex;
+    flex-direction: row;
+  }
 `;
 const Image = styled.div`
- margin:10px;
- @media${deviceMax.mobileL}{
-  margin:5px;
-  
- }
- 
+  margin: 10px;
+  @media${deviceMax.mobileL} {
+    margin: 5px;
+  }
 `;
 
 export default Card;
