@@ -15,7 +15,7 @@ const Card = (props) => {
   return (
     <>
       <Container width="100%" display="flex" flexDirection="row">
-        <CardContainer>
+        <CardContainer className="bg-gray-400">
           <Image>
             <img
               src={props.image}
@@ -29,7 +29,7 @@ const Card = (props) => {
           </Image>
 
           <ContentContainer>
-            <p>
+            <p className="text-gray-900">
               {props.title}
               <span style={{ display: "block", marginTop: "10px" }}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
@@ -41,7 +41,7 @@ const Card = (props) => {
                   display: "flex",
                   paddingTop: "35px",
                   justifyContent: "space-between",
-                  color: "#ebb905",
+                  color: "green",
                   fontWeight: "bold",
                 }}
               >
@@ -65,7 +65,7 @@ const Card = (props) => {
 
 const CardContainer = styled.div`
   width: 100%;
-  background: #5c585b;
+  background: ;
   color: #ffffff;
   display: flex;
   padding: 2px;

@@ -2,8 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+.swiper-button-prev {
+  background-image: url("/public/arrowsliders.png");
+  background-repeat: no-repeat;
+  rotate: 180deg;
+  background-size: 100% auto;
+  background-position: center;
+}
+.swiper-button-prev:hover {
+  transition: 0.2s ease;
+  border-color: 0.2s ease;
+  transition-duration: 300;
+  transform: translateX(3px);
+  transform: translateY(3px);
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+.swiper-button-next {
+  background-image: url("/public/arrowsliders.png");
+  background-repeat: no-repeat;
+
+  background-size: 100% auto;
+  background-position: center;
+}
+.swiper-button-next:hover {
+  transition: 0.2s ease;
+  border-color: 0.2s ease;
+  transition-duration: 300;
+  transform: translateX(3px);
+  transform: translateY(3px);
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-pagination-bullet-active {
+  background-color: rgb(149, 171, 241) !important;
 }

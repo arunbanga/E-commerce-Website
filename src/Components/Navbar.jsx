@@ -3,12 +3,12 @@ import { Container } from "./Styles/Container.styles";
 import SearchIcon from "@mui/icons-material/Search";
 import { deviceMax } from "../Utilis/Device";
 import styled from "styled-components";
-import {NavLink} from 'react-router-dom'
-import Button from '../Components/Button'
+import { NavLink } from "react-router-dom";
+import Button from "../Components/Button";
 const Navbar = () => {
   return (
     <>
-      <Container width="100%" background="black">
+      <Container width="100%" background="b">
         <Container
           display="flex"
           flexDrection="row"
@@ -16,15 +16,15 @@ const Navbar = () => {
           background="#fff"
           box-shadow="10px 10px 0px 0px gray"
         >
-          <Nav>
+          <Nav className="bg-gray-400">
             <Leftcontainer>
-              <h2 className='text-3xl text-yellow-600 py-3 px-2 font-semibold'>
+              <h2 className="text-2xl text-gray-900 absolute left-1 lg:text-4xl lg:absolute lg:left-8 py-3  font-serif ">
                 Brand
               </h2>
             </Leftcontainer>
 
             <input
-              className="input h-7 w-1/2 my-4 border border-black-500 rounded text-sm text-black outline hover:ring-2 ring-gray-300"
+              className="input h-8 w-1/2 my-4  px-3  rounded text-sm text-gray-900 border-gray-200  hover:bg-gray-200 hover:text-gray-900 hover:font-bold"
               type="text"
               // style={{
               //   height: "30px",
@@ -38,13 +38,17 @@ const Navbar = () => {
               placeholder="Search for Products,Brand and More"
             />
             <SearchIcon
-              className="serachbar mr-5 ml-1 mt-5 hover:text-yellow-700 active:text-red-400"
+              className="serachbar mr-5 ml-1 my-5 hover:text-gray-600 active:text-gray-600"
               // style={{ marginRight: "20px", marginTop: "25px" }}
             />
-            <div className="nav" >
-            <NavLink  className='py-5 mx-2 ' to='/'> Home</NavLink>
-            <NavLink  className='py-5 mx-2 ' to='/products'> Products</NavLink>
-            <Button/> 
+            <div className="nav  font-serif">
+              <NavLink className="py-5 mx-2 " to="/">
+                Home
+              </NavLink>
+              <NavLink className="py-5 mx-2 " to="/products">
+                Products
+              </NavLink>
+              <Button />
             </div>
           </Nav>
         </Container>
@@ -59,8 +63,8 @@ const Nav = styled.div`
   margin: 0px;
   box-shadow: 2px 2px 5px 2px gray;
   display: flex;
-  background: #151f3d;
-  color: white;
+
+  color: black;
   flex-direction: row;
 
   h3:active {
@@ -70,10 +74,11 @@ const Nav = styled.div`
     display: flex;
   }
   .nav a {
-    color: white;
+    color: black;
   }
   .nav a:hover {
-    color: #ffae00;
+    color: black;
+    background: white;
   }
   @media ${deviceMax.mobileL} {
     .input {
